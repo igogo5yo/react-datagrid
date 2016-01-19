@@ -3,6 +3,7 @@
 var React = require('react')
 var assign = require('object-assign');
 var ReactMenu = require('react-menus')
+var ReactDOM  = require('react-dom')
 
 function stopPropagation(event){
     event.stopPropagation()
@@ -166,7 +167,7 @@ module.exports = {
     },
 
     onFilterMenuMount: function(menu){
-        var dom = menu.getDOMNode()
+        var dom = ReactDOM.findDOMNode(menu)
 
         if (dom){
             var input = dom.querySelector('input')
